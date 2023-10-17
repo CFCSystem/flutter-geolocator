@@ -28,29 +28,6 @@ public class LocationOptions {
 
     LocationAccuracy locationAccuracy = LocationAccuracy.best;
 
-    if (accuracy != null) {
-      switch (accuracy) {
-        case 0:
-          locationAccuracy = LocationAccuracy.lowest;
-          break;
-        case 1:
-          locationAccuracy = LocationAccuracy.low;
-          break;
-        case 2:
-          locationAccuracy = LocationAccuracy.medium;
-          break;
-        case 3:
-          locationAccuracy = LocationAccuracy.high;
-          break;
-        case 5:
-          locationAccuracy = LocationAccuracy.bestForNavigation;
-          break;
-        case 4:
-        default:
-          break;
-      }
-    }
-
     return new LocationOptions(
         locationAccuracy,
         distanceFilter != null ? distanceFilter : 0,

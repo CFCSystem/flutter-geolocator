@@ -63,13 +63,7 @@ public class GeolocationManager
       Context context,
       boolean forceAndroidLocationManager,
       @Nullable LocationOptions locationOptions) {
-    if (forceAndroidLocationManager) {
-      return new LocationManagerClient(context, locationOptions);
-    }
-
-    return isGooglePlayServicesAvailable(context)
-        ? new FusedLocationClient(context, locationOptions)
-        : new LocationManagerClient(context, locationOptions);
+    return new LocationManagerClient(context, locationOptions);
   }
 
   private boolean isGooglePlayServicesAvailable(Context context) {
